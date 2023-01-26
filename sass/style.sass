@@ -1,8 +1,8 @@
 * 
 	font-family: 'Roboto', sans-serif 
-$blu #1EACC7
-$white #FFFFFF
-$red #FF5656
+$blu: #1EACC7
+$white: #FFFFFF
+$red: #FF5656
 header 
 	position: relative 
 nav 
@@ -134,28 +134,39 @@ nav
 			font-size: 17px 
 			font-weight: 400 
 .label 
+	position: relative
 	color: #fff 
 	text-transform: uppercase 
-	font-weight: 300 
+	font-weight: 700 
 	font-size: 11px 
 	background-color: black 
 	text-align: center 
-	margin: 20px auto 
+	margin: 33px auto 
 	padding: 8px 12px
 	width: 113px 
+	z-index: 2
+	&_white
+		color: #000
+		background-color: #fff 
 .title 
-	margin-top: 16px 
+	position: relative
 	font-weight: 700 
 	font-size: 38px 
 	text-align: center 
 	text-transform: uppercase 
+	z-index: 2
+	&_white
+		color: #fff
 .subtitle
-	margin-top: 19px
+	position: relative
 	font-weight: 400
 	font-size: 17px
 	color: #222222
 	text-align: center
-
+	z-index: 2
+	&_white
+		color: #fff
+  
 .mobile
 	min-height: 864px
 	padding: 48px 0 79px 0
@@ -201,3 +212,28 @@ nav
 			margin: 0 auto
 			border-radius: 100%
 			cursor: pointer
+.car
+	position: relative
+	min-height: 890px
+	padding: 57px 0 138px 0
+	background: url('../img/mobile_bg.png') center center/cover no-repeat
+	// background:  #070716
+	&_img
+		position: relative
+		display: block
+		margin: 54px auto 0 auto
+		z-index: 2
+	&_subtitle
+		color: #000
+		text-align: center
+		font-size: 17px
+		font-weight: 300
+	.black
+		position: absolute
+		top: 0
+		left: 0
+		background:  #070716
+		height: 500px
+		width: 100%
+		z-index: 1
+
