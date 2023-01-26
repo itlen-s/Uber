@@ -143,7 +143,7 @@ nav {
     height: 850px;
 }
 
-.advantages .advantages_header {
+.label {
     color:#fff;
     text-transform: uppercase;
     font-weight: 400;
@@ -154,7 +154,7 @@ nav {
     width: 113px;
 }
 
-.advantages  .advantages_subheader {
+.title {
     margin-top: 16px;
     font-weight: 700;
     font-size: 38px;
