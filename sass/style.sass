@@ -3,6 +3,11 @@
 $blu: #1EACC7
 $white: #FFFFFF
 $red: #FF5656
+
+=btn_hover
+	&:hover
+		background-image: none
+		background-color: $blu
 header 
 	position: relative 
 nav 
@@ -14,11 +19,11 @@ nav
 	padding: 15px 70px 
 	margin: 0 
 	list-style-type: none 
-	.menu_link 
+	&_link 
 		color: #fff 
 		font-size: 15px 
 		font-weight: 300 
-	.menu_item 
+	&_item 
 		border-right: 2px dotted black 
 		padding-right: 28px 
 .subheader 
@@ -26,23 +31,23 @@ nav
 	width: 100% 
 	height: 84px 
 	background-color: rgba(0, 0, 0, 0.6) 
-	.subheader_logo 
+	&_logo 
 		display: block 
 		margin-top: 16px 
 		max-width: 100% 
-	.subheader_official 
+	&_official 
 		opacity: 0.6 
 		color: $white 
 		font-weight: 400 
 		font-size: 13px 
 		margin-top: 6px 
-	.sybheader_call 
+	&_call 
 		margin-top: 19px 
 		text-align: right 
 		color: $white 
 		font-weight: 300 
 		font-size: 12px 
-	.subheader_phon 
+	&_phon 
 		display: block 
 		margin-top: 8px 
 		text-align: right 
@@ -51,7 +56,7 @@ nav
 		text-transform: uppercase 
 		color: $white 
 		line-height: 12px 
-	.subheader_btn 
+	&_btn 
 		margin-top: 19px 
 		width: 172px 
 		height: 46px 
@@ -64,11 +69,12 @@ nav
 		font-size: 14px 
 		font-weight: 400 
 		text-transform: uppercase 
+		+btn_hover
 .promo 
 	min-height: 800px 
 	background: url('../img/uber_bg.png') center center/cover no-repeat 
 	padding: 150px 0 135px 0 
-	.promo_header 
+	&_header 
 		color: $white 
 		font-weight: 700 
 		text-transform: uppercase 
@@ -76,7 +82,7 @@ nav
 		line-height: 60px 
 		margin: 0 
 		text-align: center 
-	.promo_subheader 
+	&_subheader 
 		color: $white 
 		font-weight: 700 
 		text-transform: uppercase 
@@ -85,14 +91,14 @@ nav
 		margin: 0 
 		margin-top: 22px 
 		text-align: center 
-	.promo_desc 
+	&_desc 
 		margin-top: 23px 
 		text-align: center 
 		color: $white 
 		font-weight: 400 
 		font-size: 18px 
 		line-height: 24px 
-	.promo_btn 
+	&_btn 
 		display: block 
 		margin: 115px auto 186px auto 
 		width: 259px 
@@ -105,16 +111,17 @@ nav
 		font-weight: 400 
 		font-size: 18px 
 		text-transform: uppercase 
+		+btn_hover
 .advantages 
 	height: 850px 
 	.table 
 		display: flex 
 		justify-content: center 
 		padding-bottom: 64px 
-	.advantages_items 
+	&_items 
 		display: flex 
 		padding: 20px 70px 0 0 
-	.advantages_img 
+	&_img 
 		display: flex 
 		justify-content: center 
 		align-items: center 
@@ -124,7 +131,7 @@ nav
 		background-color: $blu
 		margin: auto 25px 
 		padding: 20px 
-	.advantages_desc 
+	&_desc 
 		font-weight: 300 
 		font-size: 15px 
 		width: 343px 
@@ -212,6 +219,25 @@ nav
 			margin: 0 auto
 			border-radius: 100%
 			cursor: pointer
+			&:before
+				content: ''
+				display: block
+				width: 14px
+				height: 2px
+				background-color: $blu
+				transition: 0.3s all
+			&:after
+				content: ''
+				position: absolute
+				left: 50%
+				transform: translateX(-50%)
+				height: 14px
+				width: 2px
+				background-color: $blu
+				transition: 0.3s all
+			&:hover
+				&:before, &:after
+					background-color: $red
 .car
 	position: relative
 	min-height: 890px
@@ -233,7 +259,52 @@ nav
 		top: 0
 		left: 0
 		background:  #070716
-		height: 500px
+		height: 499px
 		width: 100%
 		z-index: 1
-
+.require
+	padding: 68px 0 84px 0
+	&_desc
+		color: $blu
+		margin-top: 25px
+		font-size: 17px
+		font-weight: 300
+		line-height: 24px
+	&_block
+		margin: 33px 0
+		&_nmb
+			margin-bottom: 0px
+	&_title
+		color: $blu
+		font-size: 22px
+		font-weight: 400
+	&_list
+		list-style-type: none
+		padding-left: 50px
+		margin-top: 22px
+		li
+			// display: inline-block
+			position: relative
+			font-size: 17px
+			font-weight: 300
+			line-height: 24px
+			margin-bottom: 10px
+			&:before
+				content: ''
+				display: block
+				position: absolute
+				left: -32px
+				top: 3px
+				// display: inline-block
+				// vertical-align: middle
+				// transform: translate(-5px , -2px)
+				width: 21px
+				height: 20px
+				background: url('../img/icons/blue.png') center center/cover no-repeat
+	.warning
+		.require_title
+			color: $red
+		.require_list
+			li
+				&:before
+					background: url('../img/icons/red.png') center center/cover no-repeat		
